@@ -42,7 +42,7 @@ def runSyncQuery (service, projectId, datasetId, timeout=0):
     "the application to re-authorize")
 
   except HttpError as err:
-    print 'Error in runSyncQuery:', pprint.pprint(err.content)
+    print 'Error in runSyncQuery:', print(err.content)
 
   except Exception as err:
     print 'Undefined error' % err

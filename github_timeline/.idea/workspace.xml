@@ -29,7 +29,7 @@
       <file leaf-file-name="sample.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="54" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2166" max-vertical-offset="3724">
+            <state line="104" column="57" selection-start="3809" selection-end="3809" vertical-scroll-proportion="0.5147059" vertical-offset="1800" max-vertical-offset="3920">
               <folding>
                 <element signature="e#814#829#0" expanded="true" />
               </folding>
@@ -48,6 +48,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/sample.py" />
+        <option value="$PROJECT_DIR$/QueryData.py" />
       </list>
     </option>
   </component>
@@ -83,6 +84,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -103,17 +105,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -226,9 +227,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -250,6 +248,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -336,7 +337,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962406" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1534268" sideWeight="0.6728499" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5227656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -364,11 +365,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/sample.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/sample.py</url>
           <line>147</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -377,6 +373,15 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="54" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2280" max-vertical-offset="3920">
+          <folding>
+            <element signature="e#814#829#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="110" column="41" selection-start="4024" selection-end="4024" vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="3724">
@@ -395,9 +400,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/a.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="998" column="69" selection-start="3382572" selection-end="3382572" vertical-scroll-proportion="0.64426875" vertical-offset="19634" max-vertical-offset="20140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QueryData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="26" selection-start="1861" selection-end="1861" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="54" selection-start="4230" selection-end="4230" vertical-scroll-proportion="0.0" vertical-offset="2166" max-vertical-offset="3724">
+        <state line="104" column="57" selection-start="3809" selection-end="3809" vertical-scroll-proportion="0.5147059" vertical-offset="1800" max-vertical-offset="3920">
           <folding>
             <element signature="e#814#829#0" expanded="true" />
           </folding>
