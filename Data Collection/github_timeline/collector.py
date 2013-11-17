@@ -31,11 +31,13 @@ import os
 import sys
 import glob
 import datetime
+import json
 
 from apiclient import discovery
 from oauth2client import file
 from oauth2client import client
 from oauth2client import tools
+
 from os.path import basename
 
 # Parser for command-line arguments.
@@ -44,6 +46,48 @@ parser = argparse.ArgumentParser(
     formatter_class=argparse.RawDescriptionHelpFormatter,
     parents=[tools.argparser])
 
+def writeToTxt(fileName, content):
+    try:
+        text_file = open(fileName, "w")
+        text_file.write(content)
+        text_file.close()
+
+    except Exception as err:
+        print err
+
+def readFile(filename):
+        try:
+           f = open(filename,'r')
+           content = f.read()
+           f.close()
+           return content
+        except Exception as err:
+            print err
+
+def changeClient(clientId, clientSecret):
+    values = [{'name': 'client_id', 'value': clientId}, {'name': 'client_secret', 'value': clientSecret}]
+    modifyJsonFile('client_secrets.json', values)
+    modifyDatFile('github-timeline.dat', values)
+
+def modifyJsonFile(file, values):
+    jsonContent = readFile(file)
+    clientJson = json.loads(jsonContent)
+
+    for value in values:
+        if not (value is None):
+            clientJson["installed"][value['name']] = value['value']
+    writeToTxt(file,json.dumps(clientJson))
+
+def modifyDatFile(file, values):
+    jsonContent = readFile(file)
+    clientJson = json.loads(jsonContent)
+
+    for value in values:
+        if not (value is None):
+            clientJson[value['name']] = value['value']
+    writeToTxt(file,json.dumps(clientJson))
+
+#changeClient('88177568557-0n58oa9vso5oesrbhajmor01kc009e06.apps.googleusercontent.com', 'qluRUKx6vdNWDYosYJKhpiCJ')
 
 # CLIENT_SECRETS is name of a file containing the OAuth 2.0 information for this
 # application, including client_id and client_secret. You can see the Client ID
@@ -75,6 +119,9 @@ def initService(argv):
     # If the credentials don't exist or are invalid run through the native client
     # flow. The Storage object will ensure that if successful the good
     # credentials will get written back to the file.
+
+
+
     storage = file.Storage('github-timeline.dat')
     credentials = storage.get()
     if credentials is None or credentials.invalid:
@@ -95,15 +142,15 @@ def main(argv):
 
     try:
         print "Success! Now add code here."
-        query = Query(service, "artful-line-401", "publicdata:samples", 10)
+        query = Query(service, "shaped-goal-401", "publicdata:samples", 10)
 
         sqlFiles = glob.glob(SQL_PATH + '*.sql')
 
         strNow = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
-        for file in sqlFiles:
-            query.runSyncQuery(file, OUTPUT_PATH + basename(file) + strNow + '.csv')
-
+        #for file in sqlFiles:
+            #query.runSyncQuery(file, OUTPUT_PATH + basename(file) + strNow + '.csv')
+        query.runSyncQuery('D:\Github\CMPE272-Group8\Data Collection\github_timeline\sql\Fork2PullRequestByLanguage.sql','Fork2PullRequestByLanguage.csv')
     except client.AccessTokenRefreshError:
         print ("The credentials have been revoked or expired, please re-run the application to re-authorize")
 
@@ -121,7 +168,7 @@ class Query():
         try:
             print 'timeout:%d' % self.timeout
             jobCollection = self.service.jobs()
-            sql = self.readFile(sql)
+            sql = readFile(sql)
 
             queryData = {'query':sql,'timeoutMs':self.timeout }
 
@@ -162,33 +209,18 @@ class Query():
                 rowArray = []
                 row = rows[i].get('f')
                 for j in range(0, len(row)):
-                  rowArray.append(row[j].get('v'))
+                    if not(row[j] is None):
+                        rowArray.append(row[j].get('v'))
                 content += ",".join(rowArray) + '\n'
+                #print(rows[i])
 
-            self.writeToTxt(outputFile, content)
-
-        except Exception as err:
-            print err
-
-    def writeToTxt(self, fileName, content):
-        try:
-            text_file = open(fileName, "w")
-            text_file.write(content)
-            text_file.close()
+            writeToTxt(outputFile, content)
 
         except Exception as err:
             print err
 
-    def readFile(self, filename):
-        try:
-           f = open(filename,'r')
-           content = f.read()
-           f.close()
-           return content
-        except Exception as err:
-            print err
 
-	  
+
 
 # For more information on the BigQuery API you can visit:
 #

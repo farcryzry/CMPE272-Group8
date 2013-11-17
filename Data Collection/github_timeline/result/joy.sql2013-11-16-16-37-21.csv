@@ -12,30 +12,30 @@ Dart,138
 C#,129
 Perl,111
 VimL,69
-Lua,51
 Emacs Lisp,51
-ActionScript,48
+Lua,51
 Scala,48
+ActionScript,48
 Haskell,42
 CoffeeScript,36
-D,24
 Erlang,24
+D,24
 Go,21
 Matlab,18
-Rust,15
-ooc,15
+Clojure,15
 Common Lisp,15
 Assembly,15
-Clojure,15
-Prolog,12
+Rust,15
+ooc,15
 Puppet,12
+Prolog,12
 FORTRAN,6
 Groovy,6
 Scheme,6
-SuperCollider,3
-OpenEdge ABL,3
 Standard ML,3
-Coq,3
-XQuery,3
+OpenEdge ABL,3
+SuperCollider,3
 Objective-J,3
+XQuery,3
 HaXe,3
+Coq,3
