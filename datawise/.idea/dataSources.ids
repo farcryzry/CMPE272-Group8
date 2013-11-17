@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Django default" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="9977abfb-d702-4963-8a52-4c9f112bc547">
+    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+    <jdbc-url>jdbc:sqlite:D:\GitHub\CMPE272-Group8\datawise\datawise\..\..\datawise.db</jdbc-url>
+    <libraries/>
+  </data-source>
+</component>

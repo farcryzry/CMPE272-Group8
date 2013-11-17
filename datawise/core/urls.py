@@ -1,7 +1,11 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
 
 from core import views
 from django.views.generic import TemplateView
+
+from core.api import ResultResource
+
+result_resource = ResultResource()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='core/index.html'), name='index'),
@@ -14,4 +18,6 @@ urlpatterns = patterns('',
     url(r'^interface/$', TemplateView.as_view(template_name='core/interface.html'), name='interface'),
     url(r'^login/$', TemplateView.as_view(template_name='core/login.html'), name='login'),
     url(r'^editors/$', TemplateView.as_view(template_name='core/editors.html'), name='editors'),
+
+    url(r'^api/', include(result_resource.urls)),
 )
