@@ -11,6 +11,7 @@ from loclists import check_unresolved
 
 unresolved_locations = []
 commits_by_countries = {}
+commits_by_language_countries = {}
 countries_by_locstr = {}
 gc = GeonamesCache()
 countries = gc.get_countries()
@@ -80,25 +81,6 @@ def determine_country(locstr, langcnt):
     unresolved_locations.append('%s, %d' % (locstr, langcnt))
 
 def map_commit_to_country():
-    #fcsv = open('langcnt_by_loc.csv', 'rb')
-    #reader = csv.reader(fcsv)
-    #headers = reader.next()
-    #index = 0
-    #for record in reader:
-    #    loc, langcnt, repository_language = record
-    #    if loc.startswith('http://'): continue
-    #    langcnt = int(langcnt)
-    #    country = determine_country(loc, langcnt)
-    #    if country is not None:
-    #        if country not in commits_by_countries:
-    #            commits_by_countries[country] = {'commits': 0}
-    #        commits_by_countries[country]['commits'] += langcnt
-    #
-    #    print(index)
-    #    index += 1
-    #
-    #fcsv.close()
-
     index = 0
     content = read_file('langcnt_by_loc.csv')
     lines = content.split('\n')
@@ -115,6 +97,32 @@ def map_commit_to_country():
                 if country not in commits_by_countries:
                     commits_by_countries[country] = {'commits': 0}
                 commits_by_countries[country]['commits'] += langcnt
+
+            print(index)
+            index += 1
+
+def map_country_commit_count_to_language():
+
+    index = 0
+    content = read_file('loccnt_by_lang.csv')
+    lines = content.split('\n')
+
+    for i in range(1, len(lines)):
+        line_items = lines[i].split("\",\"")
+        if(len(line_items) == 3):
+            lang = line_items[0].replace("\"","")
+            loc = line_items[1].replace("\"","")
+            loccount = line_items[2].replace("\"","")
+            if loc.startswith('http://'): continue
+            loccount = int(loccount)
+            country = determine_country(loc, loccount)
+
+            if country is not None:
+                if lang not in commits_by_language_countries:
+                    commits_by_language_countries[lang] = {}
+                if country not in commits_by_language_countries[lang]:
+                    commits_by_language_countries[lang][country] = {'commits': 0}
+                commits_by_language_countries[lang][country]['commits'] += loccount
 
             print(index)
             index += 1
@@ -136,7 +144,7 @@ def save_country_mapping(commits_by_countries):
         writer.writerow([c, commits_by_countries[c]['commits']])
     fcsv.close()
 
-def calc_comits():
+def calc_comits_by_country():
     # calc commit ratio per capita
     for c in commits_by_countries:
         if c not in countries_by_names:
@@ -164,6 +172,39 @@ def calc_comits():
     uf.write('\n'.join(unresolved_locations))
     uf.close()
 
+def calc_comits_by_language():
+
+    # write data to csv
+    for lang in commits_by_language_countries.keys():
+        commits_by_each_country = commits_by_language_countries[lang]
+        for c in commits_by_each_country:
+            if c not in countries_by_names:
+                print '### %s' % c
+                continue
+            popcnt = float(countries_by_names[c]['population'])
+            if popcnt > 0:
+                by_capita = commits_by_each_country[c]['commits'] / popcnt
+                by_100k = round(by_capita * 100000, 2)
+            else:
+                by_capita = 0
+                by_100k = 0
+            commits_by_each_country[c]['commits_per_capita'] = by_capita
+            commits_by_each_country[c]['commits_per_100k'] = by_100k
+
+        wcsv = open('github_commits_by_' + lang + '.csv', 'wb')
+        writer = csv.writer(wcsv, quoting=csv.QUOTE_MINIMAL)
+        writer.writerow(['Country', 'Commit Count', 'Commits per Capita', 'Commits per 100,000 People', 'Population'])
+        for c in commits_by_each_country:
+            writer.writerow([c, commits_by_each_country[c]['commits'], commits_by_each_country[c]['commits_per_capita'], commits_by_each_country[c]['commits_per_100k'], countries_by_names[c]['population']])
+        wcsv.close()
+
+
+    uf = open('unresolved_locations.txt', 'w')
+    uf.write('\n'.join(unresolved_locations))
+    uf.close()
+
 if __name__ == "__main__":
-    map_commit_to_country()
-    calc_comits()
+    #map_commit_to_country()
+    #calc_comits_by_country()
+    map_country_commit_count_to_language()
+    calc_comits_by_language()
