@@ -49,7 +49,7 @@ parser = argparse.ArgumentParser(
 def writeToTxt(fileName, content):
     try:
         text_file = open(fileName, "w")
-        text_file.write(content)
+        text_file.write(content.encode('UTF-8'))
         text_file.close()
 
     except Exception as err:
@@ -87,7 +87,7 @@ def modifyDatFile(file, values):
             clientJson[value['name']] = value['value']
     writeToTxt(file,json.dumps(clientJson))
 
-#changeClient('88177568557-0n58oa9vso5oesrbhajmor01kc009e06.apps.googleusercontent.com', 'qluRUKx6vdNWDYosYJKhpiCJ')
+#changeClient('1028329577360-7o2ar9tf787ks6cl0l8gr1go5rdkhg2e.apps.googleusercontent.com', 'II85R_9bGvhhF7sPzpTABD2g')
 
 # CLIENT_SECRETS is name of a file containing the OAuth 2.0 information for this
 # application, including client_id and client_secret. You can see the Client ID
@@ -142,7 +142,7 @@ def main(argv):
 
     try:
         print "Success! Now add code here."
-        query = Query(service, "shaped-goal-401", "publicdata:samples", 10)
+        query = Query(service, "earnest-vine-403", "publicdata:samples", 10)
 
         sqlFiles = glob.glob(SQL_PATH + '*.sql')
 
@@ -150,7 +150,7 @@ def main(argv):
 
         #for file in sqlFiles:
             #query.runSyncQuery(file, OUTPUT_PATH + basename(file) + strNow + '.csv')
-        query.runSyncQuery('D:\Github\CMPE272-Group8\Data Collection\github_timeline\sql\Fork2PullRequestByLanguage.sql','Fork2PullRequestByLanguage.csv')
+        query.runSyncQuery(SQL_PATH +'1 langcnt_by_loc.sql','langcnt_by_loc.csv')
     except client.AccessTokenRefreshError:
         print ("The credentials have been revoked or expired, please re-run the application to re-authorize")
 
@@ -193,31 +193,33 @@ class Query():
             print err
 
     def SaveData(self, queryReply, outputFile):
-        try:
-            print(queryReply)
+        #try:
+            #print(queryReply)
 
             columns = queryReply.get('schema')['fields']
             columnsArray = []
             for i in range(0, len(columns)):
-                columnsArray.append(columns[i].get('name'))
+                columnsArray.append(unicode("\"" + columns[i].get('name') + "\"" ))
 
-            content = ",".join(columnsArray) + '\n'
+            content = unicode(",".join(columnsArray) + '\n')
 
             rows = queryReply['rows']
+
+            print(len(rows))
 
             for i in range(0, len(rows)):
                 rowArray = []
                 row = rows[i].get('f')
                 for j in range(0, len(row)):
                     if not(row[j] is None):
-                        rowArray.append(row[j].get('v'))
-                content += ",".join(rowArray) + '\n'
+                        rowArray.append(unicode("\"" + row[j].get('v') + "\"" ))
+                content += unicode(",".join(rowArray) + '\n')
                 #print(rows[i])
 
             writeToTxt(outputFile, content)
 
-        except Exception as err:
-            print err
+        #except Exception as err:
+        #    print err
 
 
 

@@ -1,0 +1,22 @@
+Earth, 7320
+Earth, 6362
+,, 6319
+/dev/null, 6159
+Earth, 5216
+CET, 5071
+Europe, 4635
+Internet, 4312
+Edinburgh, Scotland, 3744
+Edinburgh, Scotland, 3446
+Århus, 3414
+Edinburgh, Scotland, 3265
+Earth, 3224
+Earth, 3133
+The cloud, 3074
+Edinburgh, 2734
+, 2548
+Stornoway, 2477
+Poznań, 2468
+Internet, 2461
+#eggsml, 2418
+Europe, 2400
