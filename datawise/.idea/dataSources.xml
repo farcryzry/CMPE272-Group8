@@ -3,7 +3,7 @@
   <component name="DataSourceManagerImpl" format="xml" hash="367910439">
     <data-source source="LOCAL" name="Django default" uuid="9977abfb-d702-4963-8a52-4c9f112bc547">
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\GitHub\CMPE272-Group8\datawise\datawise\..\..\datawise.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\sony\Documents\GitHub\CMPE272-Group8\datawise\datawise\..\..\datawise.db</jdbc-url>
       <libraries />
     </data-source>
   </component>
