@@ -12,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$commit_locations.coverage" NAME="commit_locations Coverage Results" MODIFIED="1384741736073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/gh-commit-locations" />
+    <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$commit_locations.coverage" NAME="commit_locations Coverage Results" MODIFIED="1384755666949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/gh-commit-locations" />
     <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$collector.coverage" NAME="collector Coverage Results" MODIFIED="1384740812779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$sample.coverage" NAME="collector Coverage Results" MODIFIED="1384647621145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -28,67 +28,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="collector.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/collector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="191" column="8" selection-start="6581" selection-end="6605" vertical-scroll-proportion="0.0" vertical-offset="3409" max-vertical-offset="4640">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="commit_locations.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="9" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.24096386" vertical-offset="1600" max-vertical-offset="2600">
+            <state line="74" column="46" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.769863" vertical-offset="1199" max-vertical-offset="3500">
               <folding>
                 <element signature="e#367#387#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="github_commits_by_country.csv" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/github_commits_by_country.csv">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="52" selection-start="488" selection-end="488" vertical-scroll-proportion="-6.4" vertical-offset="0" max-vertical-offset="1480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="langcnt_by_loc_sample.csv" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/langcnt_by_loc_sample.csv">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1999" column="28" selection-start="60973" selection-end="60973" vertical-scroll-proportion="-9.0" vertical-offset="39755" max-vertical-offset="40100">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bad.sql" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/bad.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="140">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bad.sql2013-11-16-16-37-21.csv" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result/bad.sql2013-11-16-16-37-21.csv">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="25" selection-start="188" selection-end="188" vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="320">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,25 +45,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="35" selection-start="176" selection-end="176" vertical-scroll-proportion="-1.6" vertical-offset="0" max-vertical-offset="2000140">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1 langcnt_by_loc.sql" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/1 langcnt_by_loc.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="35" selection-start="225" selection-end="225" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="220">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loclists.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/loclists.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="28" selection-start="237" selection-end="237" vertical-scroll-proportion="-6.2" vertical-offset="25" max-vertical-offset="34860">
+            <state line="1" column="10" selection-start="48" selection-end="51" vertical-scroll-proportion="-0.26666668" vertical-offset="0" max-vertical-offset="2000140">
               <folding />
             </state>
           </provider>
@@ -143,6 +71,8 @@
         <option value="$PROJECT_DIR$/collector.py" />
         <option value="$PROJECT_DIR$/sql/1 langcnt_by_loc.sql" />
         <option value="$PROJECT_DIR$/libs/gh-commit-locations/langcnt_by_loc_sample.csv" />
+        <option value="$PROJECT_DIR$/libs/gh-commit-locations/github_commits_by_country.csv" />
+        <option value="$PROJECT_DIR$/libs/gh-commit-locations/country_mapping.csv" />
         <option value="$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py" />
       </list>
     </option>
@@ -179,7 +109,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,6 +175,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -501,19 +431,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53511703" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5334448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25454545" sideWeight="0.6973244" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2621212" sideWeight="0.7173913" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42474917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.68585527" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30267558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -522,6 +452,26 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5334448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42474917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.68585527" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2621212" sideWeight="0.7173913" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -542,33 +492,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py</url>
-          <line>99</line>
+          <line>140</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="42" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1142" column="0" selection-start="47510" selection-end="47510" vertical-scroll-proportion="0.26330534" vertical-offset="21426" max-vertical-offset="29440">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/1 langcnt_by_loc.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="35" selection-start="225" selection-end="225" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="220">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/README.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/langcnt_by_loc.csv">
@@ -576,19 +515,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100001" column="0" selection-start="3183082" selection-end="3183082" vertical-scroll-proportion="0.60912055" vertical-offset="1999833" max-vertical-offset="2000140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/langcnt_by_loc.csv">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="35" selection-start="176" selection-end="176" vertical-scroll-proportion="-1.6" vertical-offset="0" max-vertical-offset="2000140">
-          <folding />
-        </state>
+        <state line="100001" column="0" selection-start="3183082" selection-end="3183082" vertical-scroll-proportion="0.60912055" vertical-offset="1999833" max-vertical-offset="2000140" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/bad.sql">
@@ -598,19 +525,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/unresolved_by_count.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/result/joy.sql2013-11-16-16-37-21.csv">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="8" selection-start="358" selection-end="358" vertical-scroll-proportion="0.22058824" vertical-offset="600" max-vertical-offset="940">
+        <state line="33" column="8" selection-start="358" selection-end="358" vertical-scroll-proportion="0.22058824" vertical-offset="600" max-vertical-offset="940" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_secrets.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="428" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="233" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/github-timeline.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="424" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/loclists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="28" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="34860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/geonamescache/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="41" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0" vertical-offset="1181" max-vertical-offset="1660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="1458" selection-end="1660" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="4640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/unresolved_by_count.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="31" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="500">
           <folding />
         </state>
       </provider>
@@ -620,45 +576,17 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="188" selection-end="188" vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="320">
+        <state line="4" column="25" selection-start="188" selection-end="188" vertical-scroll-proportion="0.15073529" vertical-offset="39" max-vertical-offset="320">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client_secrets.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="428" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="233">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/github-timeline.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="424" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/loclists.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="28" selection-start="237" selection-end="237" vertical-scroll-proportion="-6.2" vertical-offset="25" max-vertical-offset="34860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="8" selection-start="6581" selection-end="6605" vertical-scroll-proportion="0.0" vertical-offset="3409" max-vertical-offset="4640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/langcnt_by_loc_sample.csv">
+    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/unresolved_locations.txt">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1999" column="28" selection-start="60973" selection-end="60973" vertical-scroll-proportion="-9.0" vertical-offset="39755" max-vertical-offset="40100">
+        <state line="8" column="25" selection-start="123" selection-end="123" vertical-scroll-proportion="0.5882353" vertical-offset="0" max-vertical-offset="63240">
           <folding />
         </state>
       </provider>
@@ -668,14 +596,24 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="52" selection-start="488" selection-end="488" vertical-scroll-proportion="-6.4" vertical-offset="0" max-vertical-offset="1480">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/langcnt_by_loc.csv">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="10" selection-start="48" selection-end="51" vertical-scroll-proportion="-0.26666668" vertical-offset="0" max-vertical-offset="2000140">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="9" selection-start="3017" selection-end="3017" vertical-scroll-proportion="0.24096386" vertical-offset="1600" max-vertical-offset="2600">
+        <state line="74" column="46" selection-start="2749" selection-end="2749" vertical-scroll-proportion="0.769863" vertical-offset="1199" max-vertical-offset="3500">
           <folding>
             <element signature="e#367#387#0" expanded="true" />
           </folding>

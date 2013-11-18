@@ -79,46 +79,91 @@ def determine_country(locstr, langcnt):
 
     unresolved_locations.append('%s, %d' % (locstr, langcnt))
 
-fcsv = open('langcnt_by_loc_sample.csv', 'rb')
-reader = csv.reader(fcsv)
-headers = reader.next()
-index = 0
-for record in reader:
-    loc, langcnt, repository_language = record
-    if loc.startswith('http://'): continue
-    langcnt = int(langcnt)
-    country = determine_country(loc, langcnt)
-    if country is not None:
-        if country not in commits_by_countries:
-            commits_by_countries[country] = {'commits': 0}
-        commits_by_countries[country]['commits'] += langcnt
-    print(index)
-    index += 1
-fcsv.close()
+def map_commit_to_country():
+    #fcsv = open('langcnt_by_loc.csv', 'rb')
+    #reader = csv.reader(fcsv)
+    #headers = reader.next()
+    #index = 0
+    #for record in reader:
+    #    loc, langcnt, repository_language = record
+    #    if loc.startswith('http://'): continue
+    #    langcnt = int(langcnt)
+    #    country = determine_country(loc, langcnt)
+    #    if country is not None:
+    #        if country not in commits_by_countries:
+    #            commits_by_countries[country] = {'commits': 0}
+    #        commits_by_countries[country]['commits'] += langcnt
+    #
+    #    print(index)
+    #    index += 1
+    #
+    #fcsv.close()
 
-# calc commit ratio per capita
-for c in commits_by_countries:
-    if c not in countries_by_names:
-        print '### %s' % c
-        continue
-    popcnt = float(countries_by_names[c]['population'])
-    if popcnt > 0:
-        by_capita = commits_by_countries[c]['commits'] / popcnt
-        by_100k = round(by_capita * 100000, 2)
-    else:
-        by_capita = 0
-        by_100k = 0
-    commits_by_countries[c]['commits_per_capita'] = by_capita
-    commits_by_countries[c]['commits_per_100k'] = by_100k
+    index = 0
+    content = read_file('langcnt_by_loc.csv')
+    lines = content.split('\n')
+    for i in range(1, len(lines)):
+        line_items = lines[i].split("\",\"")
+        if(len(line_items) == 3):
+            loc = line_items[0].replace("\"","")
+            langcnt = line_items[1].replace("\"","")
+            repository_language = line_items[2].replace("\"","")
+            if loc.startswith('http://'): continue
+            langcnt = int(langcnt)
+            country = determine_country(loc, langcnt)
+            if country is not None:
+                if country not in commits_by_countries:
+                    commits_by_countries[country] = {'commits': 0}
+                commits_by_countries[country]['commits'] += langcnt
 
-# write data to csv
-wcsv = open('github_commits_by_country.csv', 'wb')
-writer = csv.writer(wcsv, quoting=csv.QUOTE_MINIMAL)
-writer.writerow(['Country', 'Commit Count', 'Commits per Capita', 'Commits per 100,000 People', 'Population'])
-for c in commits_by_countries:
-    writer.writerow([c, commits_by_countries[c]['commits'], commits_by_countries[c]['commits_per_capita'], commits_by_countries[c]['commits_per_100k'], countries_by_names[c]['population']])
-wcsv.close()
+            print(index)
+            index += 1
 
-uf = open('unresolved_locations.txt', 'w')
-uf.write('\n'.join(unresolved_locations))
-uf.close()
+def read_file(filename):
+    try:
+       f = open(filename,'r')
+       content = f.read()
+       f.close()
+       return content
+    except Exception as err:
+        print err
+
+def save_country_mapping(commits_by_countries):
+    fcsv = open('country_mapping.csv', 'a')
+    writer = csv.writer(fcsv, quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(['Country', 'Commit Count'])
+    for c in commits_by_countries:
+        writer.writerow([c, commits_by_countries[c]['commits']])
+    fcsv.close()
+
+def calc_comits():
+    # calc commit ratio per capita
+    for c in commits_by_countries:
+        if c not in countries_by_names:
+            print '### %s' % c
+            continue
+        popcnt = float(countries_by_names[c]['population'])
+        if popcnt > 0:
+            by_capita = commits_by_countries[c]['commits'] / popcnt
+            by_100k = round(by_capita * 100000, 2)
+        else:
+            by_capita = 0
+            by_100k = 0
+        commits_by_countries[c]['commits_per_capita'] = by_capita
+        commits_by_countries[c]['commits_per_100k'] = by_100k
+
+    # write data to csv
+    wcsv = open('github_commits_by_country.csv', 'wb')
+    writer = csv.writer(wcsv, quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(['Country', 'Commit Count', 'Commits per Capita', 'Commits per 100,000 People', 'Population'])
+    for c in commits_by_countries:
+        writer.writerow([c, commits_by_countries[c]['commits'], commits_by_countries[c]['commits_per_capita'], commits_by_countries[c]['commits_per_100k'], countries_by_names[c]['population']])
+    wcsv.close()
+
+    uf = open('unresolved_locations.txt', 'w')
+    uf.write('\n'.join(unresolved_locations))
+    uf.close()
+
+if __name__ == "__main__":
+    map_commit_to_country()
+    calc_comits()
