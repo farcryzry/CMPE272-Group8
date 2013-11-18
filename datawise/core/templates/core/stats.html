@@ -34,12 +34,13 @@
 			var lan='All';
 			var type='Commit Count';
 			var data;
+			var populationData;
 			var view;
 			var options;
 			
 			function loadData(){
 				$.ajax({
-						url: "../../static/data/github_commits_by_country.csv",
+						url: "../../static/data/github_commits_all.csv",
 						dataType: 'text',
 						cache: false
 				 }).done(function(csvAsString){
@@ -86,8 +87,11 @@
 					columnNum=4;
 				}
 				
+				
+				
 				options = {colorAxis:{minValue: 0, colors: colorArray}};
-				view = new google.visualization.DataView(data)
+				view = new google.visualization.DataView(data);
+				view.setRows(view.getFilteredRows([{column: 5, value: lan}]));
 				view.setColumns([0, {calc:function(dataTable, rowNum){return parseFloat(dataTable.getValue(rowNum, columnNum));}, type:'number', label:type }]);
 				
 				
@@ -121,7 +125,12 @@
 										<li onclick="mapByLan('C++')"><a href="#">C++</a></li>
 										<li onclick="mapByLan('Python')"><a href="#">Python</a></li>
 										<li onclick="mapByLan('Ruby')"><a href="#">Ruby</a></li>
-										<li onclick="mapByLan('Perl')"><a href="#">Perl</a></li>
+										<li onclick="mapByLan('PHP')"><a href="#">PHP</a></li>
+										<li onclick="mapByLan('JavaScript')"><a href="#">JavaScript</a></li>
+										<li onclick="mapByLan('C')"><a href="#">C</a></li>
+										<li onclick="mapByLan('C#')"><a href="#">C#</a></li>
+										<li onclick="mapByLan('Objective-C')"><a href="#">Objective-C</a></li>
+										<li onclick="mapByLan('Shell')"><a href="#">Shell</a></li>										
 										<li class="divider"></li>
 										<li onclick="mapByLan('All')"><a href="#">All</a></li>
 									  </ul>
