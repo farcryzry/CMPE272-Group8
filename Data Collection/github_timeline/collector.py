@@ -150,7 +150,7 @@ def main(argv):
 
         #for file in sqlFiles:
             #query.runSyncQuery(file, OUTPUT_PATH + basename(file) + strNow + '.csv')
-        query.runSyncQuery(SQL_PATH +'1 langcnt_by_loc.sql','langcnt_by_loc.csv')
+        query.runSyncQuery(SQL_PATH +'2 loccnt_by_lang.sql','loccnt_by_lang.csv')
     except client.AccessTokenRefreshError:
         print ("The credentials have been revoked or expired, please re-run the application to re-authorize")
 
