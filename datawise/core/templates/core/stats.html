@@ -64,19 +64,18 @@
 			
 			function draw(){
 				var columnNum=1;
+				var colorArray=["#FEF0D9", "#FDCC8A", "#FC8D59", "#E34A33", "#B30000"];
 			
 				if(lan=='Java'){
-					options = {colorAxis:{minValue: 0,  colors: ["#FFFFCC", "#C2E699", "#78C679", "#31A354", "#006837" ]}};
+					colorArray=["#FFFFD4","#FED98E","#FE9929","#D95F0E","#993404" ];
 				}else if(lan=='C++'){
-					options = {colorAxis:{minValue: 0,  colors: ["#FFFFB2", "#FECC5C", "#FD8D3C", "#F03B20", "#BD0026"]}};
+					colorArray=["#FFFFCC", "#C2E699", "#78C679", "#31A354", "#006837"];
 				}else if(lan=='Python'){
-					options = {colorAxis:{minValue: 0,  colors: ["#F1EEF6", "#BDC9E1", "#74A9CF", "#2B8CBE", "#045A8D"]}};
+					colorArray=["#F1EEF6", "#BDC9E1", "#74A9CF", "#2B8CBE", "#045A8D"];
 				}else if(lan=='Ruby'){
-					options = {colorAxis:{minValue: 0,  colors: ["#F1EEF6", "#D7B5D8", "#DF65B0", "#DD1C77", "#980043" ]}};
+					colorArray=["#F1EEF6", "#D7B5D8", "#DF65B0", "#DD1C77", "#980043" ];
 				}else if(lan=='Perl'){
-					options = {colorAxis:{minValue: 0,  colors: ["#F6EFF7", "#BDC9E1", "#67A9CF", "#1C9099", "#016C59" ]}};
-				}else{
-					options = { colorAxis:{minValue: 0,  colors: ["#FEF0D9", "#FDCC8A", "#FC8D59", "#E34A33", "#B30000"]}};
+					colorArray=["#F6EFF7", "#BDC9E1", "#67A9CF", "#1C9099", "#016C59" ];
 				}
 				
 				if(type=='Commit Count'){
@@ -87,8 +86,9 @@
 					columnNum=4;
 				}
 				
+				options = {colorAxis:{minValue: 0, colors: colorArray}};
 				view = new google.visualization.DataView(data)
-				view.setColumns([0, {calc:function(dataTable, rowNum){return parseFloat(dataTable.getValue(rowNum, columnNum));}, type:'number', label:'Total Commits'}]);
+				view.setColumns([0, {calc:function(dataTable, rowNum){return parseFloat(dataTable.getValue(rowNum, columnNum));}, type:'number', label:type }]);
 				
 				
 				var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
