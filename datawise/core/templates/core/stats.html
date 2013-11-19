@@ -2,7 +2,7 @@
 <html>
     
     <head>
-        <title>Statistics</title>
+        <title>Geek Planet</title>
         <!-- Bootstrap -->
         <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="../../static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
@@ -15,7 +15,6 @@
 
         <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
         <script src="../../static/vendors/jquery.knob.js"></script>
-        <script src="../../static/vendors/raphael-min.js"></script>
         <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
         <script src="../../static/vendors/flot/jquery.flot.js"></script>
         <script src="../../static/vendors/flot/jquery.flot.categories.js"></script>
@@ -67,15 +66,15 @@
 				var columnNum=1;
 				var colorArray=["#FEF0D9", "#FDCC8A", "#FC8D59", "#E34A33", "#B30000"];
 			
-				if(lan=='Java'){
+				if(lan=='Java'|| lan=='Shell'){
 					colorArray=["#FFFFD4","#FED98E","#FE9929","#D95F0E","#993404" ];
-				}else if(lan=='C++'){
+				}else if(lan=='C++' ||  lan=='C'){
 					colorArray=["#FFFFCC", "#C2E699", "#78C679", "#31A354", "#006837"];
-				}else if(lan=='Python'){
+				}else if(lan=='Python'|| lan=='C#'){
 					colorArray=["#F1EEF6", "#BDC9E1", "#74A9CF", "#2B8CBE", "#045A8D"];
-				}else if(lan=='Ruby'){
+				}else if(lan=='Ruby'|| lan=='JavaScript'){
 					colorArray=["#F1EEF6", "#D7B5D8", "#DF65B0", "#DD1C77", "#980043" ];
-				}else if(lan=='Perl'){
+				}else if(lan=='PHP'||lan=='Objective-C'){
 					colorArray=["#F6EFF7", "#BDC9E1", "#67A9CF", "#1C9099", "#016C59" ];
 				}
 				
@@ -115,7 +114,7 @@
 						<div class="block">
 							<div class="navbar navbar-inner block-header">
 								<div class="muted pull-left">
-									Geek Planet
+									<h4>Geek Planet</h4>
 								</div>
 								<div class="btn-group pull-right" style="margin:0 0 10px 0">
 									  <button class="btn btn-primary" id="lan_name">Language: All</button>
