@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
     
@@ -37,15 +39,16 @@
 		var wordScale;
 		
 		$(function() {
+			$("ul.bs-docs-sidenav li").attr("class","");
+		    $("#mood").attr("class","active");
 			divWidth=$("#chart_div").width();
 			loadData();
-            $("ul.bs-docs-sidenav li").attr("class","");
-            $("#mood").attr("class","active");
+            
 		});
 		
 		function loadData(){
 			$.ajax({
-				url: "../../static/data/sentiment_cloud.csv",
+				url: "../../static/data/sentiment_cloud_updated.csv",
 				dataType: 'text',
 				cache: false
 			}).done(function(csvAsString){
