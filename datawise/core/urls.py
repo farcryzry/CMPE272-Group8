@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^interface/$', TemplateView.as_view(template_name='core/interface.html'), name='interface'),
     url(r'^login/$', TemplateView.as_view(template_name='core/login.html'), name='login'),
     url(r'^editors/$', TemplateView.as_view(template_name='core/editors.html'), name='editors'),
+    url(r'^correlation/$', TemplateView.as_view(template_name='core/correlation.html'), name='correlation'),
 
     url(r'^api/', include(result_resource.urls)),
 )

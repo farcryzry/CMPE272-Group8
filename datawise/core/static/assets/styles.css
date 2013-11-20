@@ -4,6 +4,11 @@ body {
 	padding-bottom: 40px;
 	background-color: #f5f5f5;
 }
+#navigation li.selected a
+{
+    background:#fff;
+}
+
 
 /** Login Page **/
 #login {
