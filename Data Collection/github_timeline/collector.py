@@ -64,30 +64,27 @@ def readFile(filename):
         except Exception as err:
             print err
 
-def changeClient(clientId, clientSecret):
-    values = [{'name': 'client_id', 'value': clientId}, {'name': 'client_secret', 'value': clientSecret}]
-    modifyJsonFile('client_secrets.json', values)
+def changeClient():
+    values = get_clinet_info_from_jsonFile('client_secrets.json')
     modifyDatFile('github-timeline.dat', values)
 
-def modifyJsonFile(file, values):
+def get_clinet_info_from_jsonFile(file):
     jsonContent = readFile(file)
     clientJson = json.loads(jsonContent)
 
-    for value in values:
-        if not (value is None):
-            clientJson["installed"][value['name']] = value['value']
-    writeToTxt(file,json.dumps(clientJson))
+    values = {"client_id": clientJson["installed"]["client_id"],
+            "client_secret": clientJson["installed"]["client_secret"]}
+    return values
 
 def modifyDatFile(file, values):
     jsonContent = readFile(file)
     clientJson = json.loads(jsonContent)
 
-    for value in values:
-        if not (value is None):
-            clientJson[value['name']] = value['value']
-    writeToTxt(file,json.dumps(clientJson))
+    clientJson['client_id'] = values['client_id']
+    clientJson['client_secret'] = values['client_secret']
+    writeToTxt(file, json.dumps(clientJson))
 
-#changeClient('1028329577360-7o2ar9tf787ks6cl0l8gr1go5rdkhg2e.apps.googleusercontent.com', 'II85R_9bGvhhF7sPzpTABD2g')
+#changeClient()
 
 # CLIENT_SECRETS is name of a file containing the OAuth 2.0 information for this
 # application, including client_id and client_secret. You can see the Client ID
@@ -142,7 +139,7 @@ def main(argv):
 
     try:
         print "Success! Now add code here."
-        query = Query(service, "earnest-vine-403", "publicdata:samples", 10)
+        query = Query(service, "green-segment-405", "publicdata:samples", 60)
 
         sqlFiles = glob.glob(SQL_PATH + '*.sql')
 
@@ -150,9 +147,35 @@ def main(argv):
 
         #for file in sqlFiles:
             #query.runSyncQuery(file, OUTPUT_PATH + basename(file) + strNow + '.csv')
-        query.runSyncQuery(SQL_PATH +'2 loccnt_by_lang.sql','loccnt_by_lang.csv')
+        #languages = get_top_languages()
+        #query.runSyncQuery(SQL_PATH +'language_correlation.sql', OUTPUT_PATH + 'language_correlation.csv', languages)
     except client.AccessTokenRefreshError:
         print ("The credentials have been revoked or expired, please re-run the application to re-authorize")
+
+def read_file(filename):
+    try:
+       f = open(filename,'r')
+       content = f.read()
+       f.close()
+       return content
+    except Exception as err:
+        print err
+
+def get_top_languages():
+
+    languages = []
+    content = read_file(OUTPUT_PATH + 'top_languages.csv')
+    lines = content.split('\n')
+
+    for i in range(1, len(lines)):
+        line_items = lines[i].split(",")
+        if(len(line_items) == 2):
+            lang = line_items[0]
+
+            if lang not in languages:
+                languages.append(lang)
+
+    return languages
 
 class Query():
     def __init__(self, service, projectId, datasetId, timeout=0):
@@ -164,33 +187,42 @@ class Query():
     # Run a synchronous query, save the results to a table, overwriting the
     # existing data, and print the first page of results.
     # Default timeout is to wait until query finishes.
-    def runSyncQuery (self, sql, outputFile):
-        try:
-            print 'timeout:%d' % self.timeout
-            jobCollection = self.service.jobs()
-            sql = readFile(sql)
+    def runSyncQuery (self, sql, outputFile, v_list):
 
-            queryData = {'query':sql,'timeoutMs':self.timeout }
+        if v_list is None:
+            v_list = ['']
 
-            queryReply = jobCollection.query(projectId=self.projectId,
-                                             body=queryData).execute()
+        sql = readFile(sql)
 
-            jobReference = queryReply['jobReference']
+        index = 0
+        for v in v_list:
+            try:
+                print 'timeout:%d' % self.timeout
+                jobCollection = self.service.jobs()
 
-            # Timeout exceeded: keep polling until the job is complete.
-            while(not queryReply['jobComplete']):
-                print 'Job not yet complete...'
-                queryReply = jobCollection.getQueryResults(
-                              projectId=jobReference['projectId'],
-                              jobId=jobReference['jobId'],
-                              timeoutMs=self.timeout).execute()
+                queryData = {'query':sql.replace("{0}", v),'timeoutMs':self.timeout }
 
-            # If the result has rows, print the rows in the reply.
-            if('rows' in queryReply):
-                self.SaveData(queryReply, outputFile)
+                queryReply = jobCollection.query(projectId=self.projectId,
+                                                 body=queryData).execute()
 
-        except Exception as err:
-            print err
+                jobReference = queryReply['jobReference']
+
+                # Timeout exceeded: keep polling until the job is complete.
+                while(not queryReply['jobComplete']):
+                    print 'Job not yet complete...'
+                    queryReply = jobCollection.getQueryResults(
+                                  projectId=jobReference['projectId'],
+                                  jobId=jobReference['jobId'],
+                                  timeoutMs=self.timeout).execute()
+
+                # If the result has rows, print the rows in the reply.
+                if('rows' in queryReply):
+                    self.SaveData(queryReply, outputFile.replace('.csv', str(index) + '.csv'))
+
+            except Exception as err:
+                print err
+
+            index += 1
 
     def SaveData(self, queryReply, outputFile):
         #try:
@@ -214,7 +246,7 @@ class Query():
                     if not(row[j] is None):
                         rowArray.append(unicode("\"" + row[j].get('v') + "\"" ))
                 content += unicode(",".join(rowArray) + '\n')
-                #print(rows[i])
+                print(i)
 
             writeToTxt(outputFile, content)
 
