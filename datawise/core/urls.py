@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^login/$', TemplateView.as_view(template_name='core/login.html'), name='login'),
     url(r'^editors/$', TemplateView.as_view(template_name='core/editors.html'), name='editors'),
     url(r'^correlation/$', TemplateView.as_view(template_name='core/correlation.html'), name='correlation'),
+    url(r'^matrix/$', TemplateView.as_view(template_name='core/matrix.html'), name='matrix'),
 
     url(r'^api/', include(result_resource.urls)),
 )
