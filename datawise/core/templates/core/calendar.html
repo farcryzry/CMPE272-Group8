@@ -39,12 +39,13 @@
 			}
 
 			.group path {
-			  fill-opacity: .5;
+			  fill-opacity: 1;
 			}
 
 			path.chord {
 			  stroke: #000;
 			  stroke-width: .25px;
+			  fill-opacity: 0.5;
 			}
 
 
@@ -65,8 +66,8 @@
 		
 			
 		
-			var width = 500,
-				height = 500,
+			var width = 600,
+				height = 600,
 				outerRadius = Math.min(width, height) / 2 - 10,
 				innerRadius = outerRadius - 50;
 
@@ -94,8 +95,8 @@
 			svg.append("circle")
 				.attr("r", outerRadius);
 
-			d3.csv("{% static 'data/lan_names.csv' %}", function(lan) {
-			  d3.text("{% static 'data/lan_correlation_matrix_pos.txt' %}", function(text) {
+			d3.csv("{% static 'data/lan_names_new.csv' %}", function(lan) {
+			  d3.text("{% static 'data/lan_correlation_pos_nonself.txt' %}", function(text) {
 				var matrix=d3.csv.parseRows(text).map(function(d) {return d.map(function(i){return parseFloat(i)});});
 				console.log(matrix);
 				// Compute the chord layout.
@@ -143,11 +144,8 @@
 				// Add an elaborate mouseover title for each chord.
 				chord.append("title").text(function(d) {
 				  return lan[d.source.index].name
-					  + " -> " + lan[d.target.index].name
-					  + ": " + formatPercent(d.source.value)
-					  + "\n" + lan[d.target.index].name
-					  + " -> " + lan[d.source.index].name
-					  + ": " + formatPercent(d.target.value);
+					  + " and " + lan[d.target.index].name
+					  + ": " + d.source.value
 				});
 
 				function mouseover(d, i) {
@@ -178,7 +176,7 @@
 								</div>
 							</div>
 							
-							<div class="block-content collapse in">
+							<div class="block-content collapse in" style="text-align: center ;">
 								<div class="span12" style="padding-bottom:30px;" id="chart_div">
 								
 								</div>
