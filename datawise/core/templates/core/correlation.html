@@ -1,63 +1,74 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html class="ocks-org do-not-copy">
-<meta charset="utf-8">
-<title>Uber Rides by Neighborhood</title>
-<style>
+<html>
 
-@import url('../../static/vendors/correlation/style.css?aea6f0a');
+<meta charset="utf-8">   
+    <head>
+        <title>Language Correlation</title>
+        <!-- Bootstrap -->
+        <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../../static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href="../../static/assets/styles.css" rel="stylesheet" media="screen">
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-#circle circle {
-  fill: none;
-  pointer-events: all;
-}
-
-.group path {
-  fill-opacity: .5;
-}
-
-path.chord {
-  stroke: #000;
-  stroke-width: .25px;
-}
-
-#circle:hover path.fade {
-  display: none;
-}
-
-</style>
-
-<header>
-  <aside>January 9, 2012</aside>
-  <a href="../" rel="author">Mike Bostock</a>
-</header>
-
-<h1>Uber Rides by Neighborhood</h1>
-
-<aside>Mouseover to focus on rides to or from a single neighbor&shy;hood.
-
-<p>The thickness of links be&shy;tween neighborhoods encodes the relative frequency of rides between two neighborhoods: thicker links represent more frequent rides.
-
-<p>Links are directed: for exam&shy;ple, while 2.2% of rides go from South of Market to Downtown, only 1.2% go in the opposite direction. Links are colored by the more fre&shy;quent origin.
-
-<p>Scroll down for more!
-
-
-<script src="../../static/vendors/d3/d3.min.js"></script>
-		<script>
+         <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
+        <script src="../../static/vendors/jquery.knob.js"></script>
+        <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../static/vendors/flot/jquery.flot.js"></script>
+        <script src="../../static/vendors/flot/jquery.flot.categories.js"></script>
+        <script src="../../static/vendors/flot/jquery.flot.pie.js"></script>
+        <script src="../../static/vendors/flot/jquery.flot.time.js"></script>
+        <script src="../../static/vendors/flot/jquery.flot.stack.js"></script>
+        <script src="../../static/vendors/flot/jquery.flot.resize.js"></script>
+        <script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="../../static/vendors/d3/d3.min.js"></script>
+		<script src="../../static/vendors/d3.layout.cloud.js"></script>
+		<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>
 		
-		(function() {
-            $("ul.bs-docs-sidenav li").attr("class","");
-            $("#mood").attr("class","active");
-			drawCorr();
+		<style>
+		
+		
+			#circle circle {
+			  fill: none;
+			  pointer-events: all;
+			}
+
+			.group path {
+			  fill-opacity: 1;
+			}
+
+			path.chord {
+			  stroke: #000;
+			  stroke-width: .25px;
+			  fill-opacity: 0.5;
+			}
+
+
+		</style>
+		
+		
+		
+		
+		<script type='text/javascript'>
+		
+		$(function() {
+			$("ul.bs-docs-sidenav li").attr("class","");
+		    $("#correlation").attr("class","active");
+			drawCorr()
 		});
 
+		function drawCorr(){
 
-			var width = 720,
-				height = 720,
+		
+			var width = 600,
+				height = 600,
 				outerRadius = Math.min(width, height) / 2 - 10,
-				innerRadius = outerRadius - 24;
+				innerRadius = outerRadius - 50;
 
 			var formatPercent = d3.format(".1%");
 
@@ -73,7 +84,7 @@ path.chord {
 			var path = d3.svg.chord()
 				.radius(innerRadius);
 
-			var svg = d3.select("body").append("svg")
+			var svg = d3.select("#chart_div").append("svg")
 				.attr("width", width)
 				.attr("height", height)
 			  .append("g")
@@ -83,8 +94,9 @@ path.chord {
 			svg.append("circle")
 				.attr("r", outerRadius);
 
-			d3.csv("{% static 'data/cities.csv' %}", function(cities) {
-			  d3.json("{% static 'data/matrix.json' %}", function(matrix) {
+			d3.csv("{% static 'data/lan_names_new.csv' %}", function(lan) {
+			  d3.text("{% static 'data/lan_correlation_pos_nonself.txt' %}", function(text) {
+				var matrix=d3.csv.parseRows(text).map(function(d) {return d.map(function(i){return parseFloat(i)});});
 				console.log(matrix);
 				// Compute the chord layout.
 				layout.matrix(matrix);
@@ -97,14 +109,15 @@ path.chord {
 
 				// Add a mouseover title.
 				group.append("title").text(function(d, i) {
-				  return cities[i].name + ": " + formatPercent(d.value) + " of origins";
+				  return lan[i].name;
 				});
 
 				// Add the group arc.
+				var fill = d3.scale.category20();
 				var groupPath = group.append("path")
 					.attr("id", function(d, i) { return "group" + i; })
 					.attr("d", arc)
-					.style("fill", function(d, i) { return cities[i].color; });
+					.style("fill", function(d, i) { return fill(i); });
 
 				// Add a text label.
 				var groupText = group.append("text")
@@ -113,7 +126,7 @@ path.chord {
 
 				groupText.append("textPath")
 					.attr("xlink:href", function(d, i) { return "#group" + i; })
-					.text(function(d, i) { return cities[i].name; });
+					.text(function(d, i) { return lan[i].name; });
 
 				// Remove the labels that don't fit. :(
 				groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
@@ -124,17 +137,14 @@ path.chord {
 					.data(layout.chords)
 				  .enter().append("path")
 					.attr("class", "chord")
-					.style("fill", function(d) { return cities[d.source.index].color; })
+					.style("fill", function(d) { return fill(d.source.index); })
 					.attr("d", path);
 
 				// Add an elaborate mouseover title for each chord.
 				chord.append("title").text(function(d) {
-				  return cities[d.source.index].name
-					  + " -> " + cities[d.target.index].name
-					  + ": " + formatPercent(d.source.value)
-					  + "\n" + cities[d.target.index].name
-					  + " -> " + cities[d.source.index].name
-					  + ": " + formatPercent(d.target.value);
+				  return lan[d.source.index].name
+					  + " and " + lan[d.target.index].name
+					  + ": " + d.source.value
 				});
 
 				function mouseover(d, i) {
@@ -145,26 +155,51 @@ path.chord {
 				}
 			  });
 			});
-
+		}
 		</script>
+    </head>
+    
+    <body>
+        {% include 'navbar.html' %}
+        <div class="container-fluid">
+            <div class="row-fluid">
+                {% include 'sidebar.html' %}
 
-<p class="attribution">Source: <a href="http://blog.uber.com/2012/01/09/uberdata-san-franciscomics/">Uber Blog</a>.
+                <div class="span9" id="content">
+                      <!-- morris stacked chart -->
+                    <div class="row-fluid" >
+						<div class="block">
+                            <div class="navbar navbar-inner block-header">
+								<div class="muted pull-left">
+									<h4>Intro</h4>
+								</div>
+							</div>
 
-<p>I enjoyed <a href="http://blog.uber.com/2012/01/09/uberdata-san-franciscomics/">Bradley Voytek’s post</a> today analyzing the frequency of rides between various neighborhoods in San Francisco. However, I wondered if an alternative network visualization might better reveal patterns or anomalies in the data. Complex networks (a.k.a. “hairballs”) are hard to visualize well!
+							<div class="block-content collapse in" style="text-align: center ;">
+							</div>
+							<div class="navbar navbar-inner block-header">
+								<div class="muted pull-left">
+									<h4>Visualization</h4>
+								</div>
+							</div>
+							
+							<div class="block-content collapse in" style="text-align: center ;">
+								<div class="span12" style="padding-bottom:30px;" id="chart_div">
+								
+								</div>
+							</div>
+						</div>
+                    </div>
 
-<p>This dataset is particularly interesting because it has directed edges. For example, there are twice as many rides from South of Market to Downtown than in the opposite direction. You can’t see directionality in the original visualization because only a single edge is drawn between each node. (Or perhaps  the smaller edge is occluded by the larger one.)
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <!--<p>&copy; CMPE_272_Group_8</p>-->
+            </footer>
+        </div>
+        <!--/.fluid-container-->
 
-<p>Some alternatives I considered:
+    </body>
 
-<p>A <a href="http://mbostock.github.com/protovis/ex/matrix.html">matrix diagram</a> visualizes the <i>adjacency matrix</i> of the network by showing a two-dimensional grid; each cell in the grid encodes the relative frequency of rides from neighborhood <i>i</i> to neighborhood <i>j</i>. These are great for finding clusters (with appropriate sorting) and central components, and for looking at individual connections. Unlike a node-link diagram, though, you can’t use geography for positioning.
-
-<p>A <a href="http://mbostock.github.com/d3/ex/chord.html">chord diagram</a> arranges the nodes (neighborhoods) radially, drawing thick curves between nodes. The thickness of the curve encodes the frequency of rides between two neighborhoods. Like matrix diagrams, chord diagrams reveal asymmetries: if a chord is tapered, there are more rides <i>from</i> a given neighborhood than <i>to</i> it. The above chord diagram might be better reordered to correspond with geography.
-
-<p>If I had more time, I might also take a look at <a href="http://www.hiveplot.net/">hive plots</a>, which are a bit like radial <a href="http://bl.ocks.org/1341281">parallel coordinates</a>. I’m not sure what axes I’d use for this dataset, though.
-
-<p style="margin-top:4em;">Caveats: I am not affiliated with Uber. I do not have access to source data, so my transcription may be inaccurate. This page merely serves to illustrate different types of network visualizations.
-
-<footer>
-  <aside>January 9, 2012</aside>
-  <a href="../" rel="author">Mike Bostock</a>
-</footer>
+</html>
