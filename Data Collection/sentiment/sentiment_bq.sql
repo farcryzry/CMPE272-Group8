@@ -90,6 +90,37 @@ FROM(
 )
 GROUP BY word, language 
 
+/*
+get word count of all words(\b([^ ]*)\b) from 10 languages. Table Saved as [github_timeline.commit_msg_all]
+*/
+
+SELECT word, count(word) as count, repository_language as language 
+FROM(
+	SELECT LOWER(REGEXP_EXTRACT(repository_description, r'(?i)\b([^ ]*)\b')) AS word, repository_language
+	FROM(
+		SELECT repository_description, repository_language 
+		FROM [githubarchive:github.timeline] 
+		WHERE 
+			repository_language != ''
+			AND(	
+						repository_language == "JavaScript" 
+						OR repository_language == "Java" 
+						OR repository_language == "Ruby" 
+						OR repository_language == "Python" 
+						OR repository_language == "PHP" 
+						OR repository_language == "C" 
+						OR repository_language == "C++" 
+						OR repository_language == "Shell" 
+						OR repository_language == "C#" 
+						OR repository_language == "Objective-C"
+					) 
+			AND repository_description != '' 
+			AND PARSE_UTC_USEC(created_at) < PARSE_UTC_USEC('2013-11-18 00:00:00')
+			AND REGEXP_MATCH(repository_description, r'(?i)\b([^ ]*)\b')
+	)
+)
+GROUP BY word, language 
+
 
 /* 
 query [github_timeline.commit_msg_all] with a group of word
@@ -98,6 +129,15 @@ SELECT *
 FROM [github_timeline.commit_msg_all]
 WHERE 
 	count>10
-	AND REGEXP_MATCH(word, r'(?i)\b(
-		/* substitute this line with the word list (seperate word with "|") */
-	)\b')
+	AND REGEXP_MATCH(word, r'(?i)^(
+		hello|world|foo|
+	)$')
+	
+/* 
+query [github_timeline.repostitory_description_words] with a group of word
+*/
+SELECT * 
+FROM [github_timeline.repostitory_description_words]
+WHERE REGEXP_MATCH(word, r'(?i)^(
+	django|vaadin
+	)$')
