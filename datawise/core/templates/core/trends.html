@@ -1,0 +1,149 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>Language Trends</title>
+    <!-- Bootstrap -->
+    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../../static/assets/styles.css" rel="stylesheet" media="screen">
+    <link href="../../static/vendors/nvd3/src/nv.d3.css" rel="stylesheet" type="text/css">
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script>
+    <![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
+    <script src="../../static/vendors/jquery.knob.js"></script>
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            overflow-y: scroll;
+        }
+
+        text {
+            font: 12px sans-serif;
+        }
+
+        svg {
+            display: block;
+            height: 600px;
+        }
+
+    </style>
+
+
+    <script type='text/javascript'>
+        $(function () {
+            $("ul.bs-docs-sidenav li").attr("class", "");
+            $("#trends").attr("class", "active");
+        });
+    </script>
+</head>
+
+<body>
+{% include 'navbar.html' %}
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        {% include 'sidebar.html' %}
+
+        <div class="span9" id="content">
+            <!-- morris stacked chart -->
+            <div class="row-fluid">
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <ul class="nav nav-pills">
+                            <li class="active"><a href="#">Visualization</a></li>
+                            <li><a href="#">Intro</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="block-content collapse in" style="text-align: center ;">
+                        <div class="span12" style="padding-bottom:30px;" id="chart1">
+                            <svg></svg>
+                        </div>
+                        <div class="span12" style="padding-bottom:30px;" id="chart2">
+                            <svg></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <!--<p>&copy; CMPE_272_Group_8</p>-->
+    </footer>
+</div>
+<!--/.fluid-container-->
+<script src="../../static/vendors/nvd3/lib/d3.v3.js"></script>
+<script src="../../static/vendors/nvd3/nv.d3.js"></script>
+<script src="../../static/vendors/nvd3/src/tooltip.js"></script>
+<script src="../../static/vendors/nvd3/src/utils.js"></script>
+<script src="../../static/vendors/nvd3/src/models/legend.js"></script>
+<script src="../../static/vendors/nvd3/src/models/axis.js"></script>
+<script src="../../static/vendors/nvd3/src/models/scatter.js"></script>
+<script src="../../static/vendors/nvd3/src/models/line.js"></script>
+<script>
+    d3.json('../../static/data/trends.json', function(data) {
+        nv.addGraph(function() {
+          var chart = nv.models.stackedAreaChart()
+                        .x(function(d) { return d[0] })
+                        .y(function(d) { return d[1] });
+
+          chart.xAxis
+              .showMaxMin(false)
+              .tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
+
+          chart.yAxis
+              .tickFormat(d3.format(',.2f'));
+
+          d3.select('#chart1 svg')
+            .datum(data)
+              .transition().duration(500).call(chart);
+
+          nv.utils.windowResize(chart.update);
+
+          return chart;
+        });
+    });
+
+    d3.json('../../static/data/trends_cumulative.json', function(data) {
+        nv.addGraph(function() {
+          var chart = nv.models.cumulativeLineChart()
+                        .x(function(d) { return d[0] })
+                        .y(function(d) { return d[1] }) //adjusting, 100% is 1.00, not 100 as it is in the data
+                        .color(d3.scale.category10().range());
+
+          chart.xAxis
+              .tickFormat(function(d) {
+                return d3.time.format('%x')(new Date(d))
+              });
+
+          chart.yAxis
+              .tickFormat(d3.format(',.1%'));
+
+          d3.select('#chart2 svg')
+              .datum(data)
+            .transition().duration(500)
+              .call(chart);
+
+          nv.utils.windowResize(chart.update);
+
+          return chart;
+        });
+    });
+</script>
+
+</body>
+
+</html>
