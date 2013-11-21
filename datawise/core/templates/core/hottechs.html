@@ -40,7 +40,7 @@
 
 		<script type='text/javascript'>
 		
-		var type='Java Technologies';
+		var type='Web Frameworks';
 		var csvAsArray;
 		var wordScale;
 		
@@ -99,7 +99,7 @@
 			
 				console.log("start to draw");
 				d3.select("#chart_div").append("svg")
-						.attr("width", 600)
+						.attr("width", 960)
 						.attr("height",400)
 					.append("g")
 						.attr("transform", "translate(450,200)")
@@ -155,13 +155,13 @@
 								<div class="tab-pane active" id="vis">
 									<div class="block-content collapse in">
 										<div class="btn-group pull-right" style="margin:0 10px 10px 0">
-											  <button class="btn btn-primary" id="type_name">Java Technologies</button>
+											  <button class="btn btn-primary" id="type_name">Web Frameworks</button>
 											  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
 											  <ul class="dropdown-menu">
-												<li onclick="cloudByType('Java Technologies')"><a href="#">Java Technologies</a></li>
 												<li onclick="cloudByType('Web Frameworks')"><a href="#">Web Frameworks</a></li>
 												<li onclick="cloudByType('JavaScript Frameworks')"><a href="#">JavaScript Frameworks</a></li>
 												<li onclick="cloudByType('NoSQL DBs')"><a href="#">NoSQL DBs</a></li>
+                                                <li onclick="cloudByType('Java Technologies')"><a href="#">Java Technologies</a></li>
 											  </ul>
 										</div><!-- /btn-group -->
 										<div class="span12" style="padding-bottom:30px;" id="chart_div">
@@ -171,7 +171,13 @@
 								</div>
 								<div class="tab-pane" id="note">	
 									<div class="block-content tab-content collapse in">
-										<p>lab note</p>
+										<h1> Hottest Technologies</h1><br>
+                                        <p><h4> What are the hottest technologies in GitHub world nowadays? </h4></p><br>
+                                        <h1> Data Specification</h1><br>
+                                        <p> <h4>- The Raw data collected is 9.51 GB.<br><br>
+                                            - Total number of rows we got after processing the above data is 1158.<br><br>
+                                            - Data is collected up to 19th November 2013.</h4><br><br>
+                                        </p>
 									</div>
 								</div>
 							</div>
