@@ -178,7 +178,23 @@
             </footer>
         </div>
         <!--/.fluid-container-->
+        <script type="text/javascript">
+            $(function(){
+                $('.block .navbar').append('<button id="zoom" class="btn btn-success" id="lan_name" style="float: right;">Full Screen</button>');
 
+                $("#zoom").click(function(){
+                    var isFullScreen = ($("#sidebar").css("display") == "none");
+
+                    $("#sidebar").toggle();
+
+                    if(isFullScreen) {
+                        $("#content").removeClass("span12").addClass("span9");
+                    } else {
+                        $("#content").removeClass("span9").addClass("span12");
+                    }
+                })
+            });
+        </script>
     </body>
 
 </html>
