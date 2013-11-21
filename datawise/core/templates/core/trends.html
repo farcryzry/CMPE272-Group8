@@ -20,7 +20,7 @@
     <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
     <script src="../../static/vendors/jquery.knob.js"></script>
     <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
-
+	<script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <style>
 
         body {
@@ -59,21 +59,29 @@
             <div class="row-fluid">
                 <div class="block">
                     <div class="navbar navbar-inner block-header">
-                        <ul class="nav nav-pills">
-                            <li class="active"><a href="#">Visualization</a></li>
-                            <li><a href="#">Intro</a></li>
-                        </ul>
+						<ul class="nav nav-pills">
+						  <li class="active"><a href="#vis" data-toggle="tab">Hottest Techs</a></li>
+						  <li><a href="#note" data-toggle="tab">Lab note</a></li>
+						</ul>
 
                     </div>
-
-                    <div class="block-content collapse in" style="text-align: center ;">
-                        <div class="span12" style="padding-bottom:30px;" id="chart1">
-                            <svg></svg>
-                        </div>
-                        <div class="span12" style="padding-bottom:30px;" id="chart2">
-                            <svg></svg>
-                        </div>
-                    </div>
+					<div class="tab-content" >
+						<div class="tab-pane active" id="vis">
+							<div class="block-content collapse in" style="text-align: center ;">
+								<div class="span12" style="padding-bottom:30px;" id="chart1">
+									<svg></svg>
+								</div>
+								<div class="span12" style="padding-bottom:30px;" id="chart2">
+									<svg></svg>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="note">	
+							<div class="block-content tab-content collapse in">
+								<p>lab note</p>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
 

@@ -27,7 +27,8 @@
 		  border-radius: 8px;           
 		  pointer-events: none;         
 		}
-		</style>
+		</style>		
+		
 
         <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
         <script src="../../static/vendors/jquery.knob.js"></script>
@@ -36,58 +37,52 @@
 		<script src="../../static/vendors/d3/d3.min.js"></script>
 		<script src="../../static/vendors/d3.layout.cloud.js"></script>
 		<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>
-		
+
 		<script type='text/javascript'>
 		
-		
-		var lan='Java';
-		var type='positive';
+		var type='Java Technologies';
 		var csvAsArray;
 		var wordScale;
 		
 		$(function() {
 			$("ul.bs-docs-sidenav li").attr("class","");
-		    $("#mood").attr("class","active");
+		    $("#hottechs").attr("class","active");
 			loadData();
             
 		});
 		
 		function loadData(){
 			$.ajax({
-				url: "../../static/data/sentiment_cloud_updated.csv",
+				url: "../../static/data/hottest_techs.csv",
 				dataType: 'text',
 				cache: false
 			}).done(function(csvAsString){
 				csvAsArray=csvAsString.csvToArray()
-					.map(function(d){ return [d[0],parseInt(d[1]),d[2],d[3]] });
+					.map(function(d){ return [d[0],parseInt(d[1]),d[2]] });
 				drawWordCloud();
 			});
 		}
 		
-		function cloudByLan(language){		
-			lan=language;
-			$("#lan_name").html("Language: "+lan);
-			drawWordCloud();
-		};
-		
-		function cloudByType(wordType){		
-			type=wordType;
+		function cloudByType(techType){		
+			type=techType;
 			$("#type_name").html(type);
 			drawWordCloud();
 		};
 		
 		function drawWordCloud(){
 			console.log("start to process data");
-			var data= csvAsArray.filter(function(d){return d[2]==lan && d[3]==type;})
+			var data= csvAsArray.filter(function(d){return d[2]==type;})
+			console.log("filtered data:");
+			console.log(data);
 			var maxCount=d3.max(data, function(d) { return d[1]; });
 			console.log("max count: "+maxCount);
-			wordScale=d3.scale.linear().domain([10,maxCount/20,maxCount]).range([11,60,120]).clamp(true);
+			wordScale=d3.scale.linear().domain([1,maxCount/10,maxCount]).range([15,60,120]).clamp(true);
 			console.log("max font size: "+wordScale(maxCount));
 			var wordArray=data.map(function(d) {return {text: d[0], count: d[1], size: wordScale(d[1])};});	
 			var fill = d3.scale.category20();
 			console.log("start to initiate cload");
 			$("#chart_div").empty();
-			d3.layout.cloud().size([900, 500])
+			d3.layout.cloud().size([800, 400])
 			  .words(wordArray)
 			  .padding(0)
 			  .rotate(function() { return ~~(Math.random() * 2) * 90; })
@@ -95,18 +90,19 @@
 			  .fontSize(function(d) { return d.size; })
 			  .on("end", draw)
 			  .start();
+			  
 
 			function draw(words) {
 				var div = d3.select("body").append("div")   
 					.attr("class", "tooltip")               
 					.style("opacity", 0);
-					
+			
 				console.log("start to draw");
 				d3.select("#chart_div").append("svg")
 						.attr("width", 960)
-						.attr("height",600)
+						.attr("height",400)
 					.append("g")
-						.attr("transform", "translate(450,250)")
+						.attr("transform", "translate(450,200)")
 					.selectAll("text")
 						.data(words)
 					.enter().append("text")
@@ -122,7 +118,7 @@
 							div.transition()        
 								.duration(200)      
 								.style("opacity", .9);      
-							div .html( d.text + "<br/>"+d.count)   
+							div .html( d.text + "<br/>"+d.count)  
 								.style("left", (d3.event.pageX) + "px")     
 								.style("top", (d3.event.pageY - 28) + "px");    
 							})                  
@@ -131,6 +127,7 @@
 								.duration(500)      
 								.style("opacity", 0);   
 						});
+						
 			};
 			
 		};
@@ -150,7 +147,7 @@
 						<div class="block">
 							<div class="navbar navbar-inner block-header">
 								<ul class="nav nav-pills">
-								  <li class="active"><a href="#vis" data-toggle="tab">Coding Mood</a></li>
+								  <li class="active"><a href="#vis" data-toggle="tab">Hottest Techs</a></li>
 								  <li><a href="#note" data-toggle="tab">Lab note</a></li>
 								</ul>
 
@@ -158,41 +155,26 @@
 							<div class="tab-content" >
 								<div class="tab-pane active" id="vis">
 									<div class="block-content collapse in">
-										<div class="btn-group pull-right" style="margin:0 0 10px 0">
-											  <button class="btn btn-primary" id="lan_name">Language: Java</button>
-											  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
-											  <ul class="dropdown-menu">
-												<li onclick="cloudByLan('Java')"><a href="#">Java</a></li>
-												<li onclick="cloudByLan('C++')"><a href="#">C++</a></li>
-												<li onclick="cloudByLan('Python')"><a href="#">Python</a></li>
-												<li onclick="cloudByLan('Ruby')"><a href="#">Ruby</a></li>
-												<li onclick="cloudByLan('PHP')"><a href="#">PHP</a></li>
-												<li onclick="cloudByLan('JavaScript')"><a href="#">JavaScript</a></li>
-												<li onclick="cloudByLan('C')"><a href="#">C</a></li>
-												<li onclick="cloudByLan('C#')"><a href="#">C#</a></li>
-												<li onclick="cloudByLan('Objective-C')"><a href="#">Objective-C</a></li>
-												<li onclick="cloudByLan('Shell')"><a href="#">Shell</a></li>										
-											  </ul>
-										</div><!-- /btn-group -->
 										<div class="btn-group pull-right" style="margin:0 10px 10px 0">
-											  <button class="btn btn-primary" id="type_name">positive</button>
+											  <button class="btn btn-primary" id="type_name">Java Technologies</button>
 											  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
 											  <ul class="dropdown-menu">
-												<li onclick="cloudByType('positive')"><a href="#">positive</a></li>
-												<li onclick="cloudByType('negative')"><a href="#">negative</a></li>
+												<li onclick="cloudByType('Java Technologies')"><a href="#">Java Technologies</a></li>
+												<li onclick="cloudByType('Web Frameworks')"><a href="#">Web Frameworks</a></li>
+												<li onclick="cloudByType('JavaScript Frameworks')"><a href="#">JavaScript Frameworks</a></li>
+												<li onclick="cloudByType('NoSQL DBs')"><a href="#">NoSQL DBs</a></li>
 											  </ul>
 										</div><!-- /btn-group -->
-										<div class="span12" style="padding-bottom:30px; width:800px" id="chart_div">
+										<div class="span12" style="padding-bottom:30px;" id="chart_div">
 										
 										</div>
-									</div>	
+									</div>
 								</div>
-								<div class="tab-pane" id="note">
-									<div class="block-content collapse in">
+								<div class="tab-pane" id="note">	
+									<div class="block-content tab-content collapse in">
 										<p>lab note</p>
 									</div>
 								</div>
-							
 							</div>
 						</div>
                     </div>

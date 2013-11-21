@@ -15,21 +15,6 @@
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
-         <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
-        <script src="../../static/vendors/jquery.knob.js"></script>
-        <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.categories.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.pie.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.time.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.stack.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.resize.js"></script>
-        <script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		<script src="../../static/vendors/d3/d3.min.js"></script>
-		<script src="../../static/vendors/d3.layout.cloud.js"></script>
-		<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>
-		
 		<style>
 		
 		
@@ -47,12 +32,15 @@
 			  stroke-width: .25px;
 			  fill-opacity: 0.5;
 			}
-
-
 		</style>
-		
-		
-		
+
+         <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
+        <script src="../../static/vendors/jquery.knob.js"></script>
+        <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="../../static/vendors/d3/d3.min.js"></script>
+		<script src="../../static/vendors/d3.layout.cloud.js"></script>
+		<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>
 		
 		<script type='text/javascript'>
 		
@@ -63,7 +51,6 @@
 		});
 
 		function drawCorr(){
-
 		
 			var width = 600,
 				height = 600,
@@ -171,15 +158,23 @@
 						<div class="block">
                             <div class="navbar navbar-inner block-header">
 								<ul class="nav nav-pills">
-								  <li class="active"><a href="#">Visualization</a></li>
-								  <li><a href="#">Intro</a></li>
+								  <li class="active"><a href="#vis" data-toggle="tab">Language Correlation</a></li>
+								  <li><a href="#note" data-toggle="tab">Lab note</a></li>
 								</ul>
 
 							</div>
-							
-							<div class="block-content collapse in" style="text-align: center ;">
-								<div class="span12" style="padding-bottom:30px;" id="chart_div">
-								
+							<div class="tab-content" >
+								<div class="tab-pane active" id="vis">
+									<div class="block-content collapse in" style="text-align: center ;">
+										<div class="span12" style="padding-bottom:30px;" id="chart_div">
+										
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="note">
+									<div class="block-content collapse in">
+										<p>lab note</p>
+									</div>
 								</div>
 							</div>
 						</div>

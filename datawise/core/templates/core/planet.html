@@ -16,12 +16,6 @@
         <script src="../../static/vendors/jquery-1.9.1.min.js"></script>
         <script src="../../static/vendors/jquery.knob.js"></script>
         <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.categories.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.pie.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.time.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.stack.js"></script>
-        <script src="../../static/vendors/flot/jquery.flot.resize.js"></script>
         <script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>
 		<script type='text/javascript' src='https://www.google.com/jsapi'></script>
@@ -119,45 +113,50 @@
 						<div class="block">
                             <div class="navbar navbar-inner block-header">
 								<ul class="nav nav-pills">
-								  <li class="active"><a href="#">Visualization</a></li>
-								  <li><a href="#">Intro</a></li>
+								  <li class="active"><a href="#vis" data-toggle="tab">Geek Planet</a></li>
+								  <li><a href="#note" data-toggle="tab">Lab note</a></li>
 								</ul>
 
 							</div>
-
-							<div class="block-content collapse in" style="text-align: center ;">
-								<div class="btn-group pull-right" style="margin:0 0 10px 0">
-									  <button class="btn btn-primary" id="lan_name">Language: All</button>
-									  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
-									  <ul class="dropdown-menu">
-										<li onclick="mapByLan('Java')"><a href="#">Java</a></li>
-										<li onclick="mapByLan('C++')"><a href="#">C++</a></li>
-										<li onclick="mapByLan('Python')"><a href="#">Python</a></li>
-										<li onclick="mapByLan('Ruby')"><a href="#">Ruby</a></li>
-										<li onclick="mapByLan('PHP')"><a href="#">PHP</a></li>
-										<li onclick="mapByLan('JavaScript')"><a href="#">JavaScript</a></li>
-										<li onclick="mapByLan('C')"><a href="#">C</a></li>
-										<li onclick="mapByLan('C#')"><a href="#">C#</a></li>
-										<li onclick="mapByLan('Objective-C')"><a href="#">Objective-C</a></li>
-										<li onclick="mapByLan('Shell')"><a href="#">Shell</a></li>										
-										<li class="divider"></li>
-										<li onclick="mapByLan('All')"><a href="#">All</a></li>
-									  </ul>
-								</div><!-- /btn-group -->
-								<div class="btn-group pull-right" style="margin:0 10px 10px 0">
-									  <button class="btn btn-primary" id="type_name">Commit Count</button>
-									  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
-									  <ul class="dropdown-menu">
-										<li onclick="mapByType('Commit Count')"><a href="#">Commit Count</a></li>
-										<li onclick="mapByType('Commits per 100,000 People')"><a href="#">Commits per 100,000 People</a></li>
-										<li onclick="mapByType('Population')"><a href="#">Population</a></li>
-									  </ul>
-								</div><!-- /btn-group -->
-							</div>
-							
-							<div class="block-content collapse in">
-								<div class="span12" style="padding-bottom:30px;" id="chart_div">
+							<div class="tab-content" >
+								<div class="tab-pane active" id="vis">
+									<div class="block-content collapse in">	
+										<div class="btn-group pull-right" style="margin:0 0 10px 0">
+											  <button class="btn btn-primary" id="lan_name">Language: All</button>
+											  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
+											  <ul class="dropdown-menu">
+												<li onclick="mapByLan('Java')"><a href="#">Java</a></li>
+												<li onclick="mapByLan('C++')"><a href="#">C++</a></li>
+												<li onclick="mapByLan('Python')"><a href="#">Python</a></li>
+												<li onclick="mapByLan('Ruby')"><a href="#">Ruby</a></li>
+												<li onclick="mapByLan('PHP')"><a href="#">PHP</a></li>
+												<li onclick="mapByLan('JavaScript')"><a href="#">JavaScript</a></li>
+												<li onclick="mapByLan('C')"><a href="#">C</a></li>
+												<li onclick="mapByLan('C#')"><a href="#">C#</a></li>
+												<li onclick="mapByLan('Objective-C')"><a href="#">Objective-C</a></li>
+												<li onclick="mapByLan('Shell')"><a href="#">Shell</a></li>										
+												<li class="divider"></li>
+												<li onclick="mapByLan('All')"><a href="#">All</a></li>
+											  </ul>
+										</div><!-- /btn-group -->
+										<div class="btn-group pull-right" style="margin:0 10px 10px 0">
+											  <button class="btn btn-primary" id="type_name">Commit Count</button>
+											  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
+											  <ul class="dropdown-menu">
+												<li onclick="mapByType('Commit Count')"><a href="#">Commit Count</a></li>
+												<li onclick="mapByType('Commits per 100,000 People')"><a href="#">Commits per 100,000 People</a></li>
+												<li onclick="mapByType('Population')"><a href="#">Population</a></li>
+											  </ul>
+										</div><!-- /btn-group -->	
+										<div class="span12" style="padding-bottom:30px;" id="chart_div">
+										</div>
+									</div>
 								</div>
+								<div class="tab-pane" id="note">
+									<div class="block-content collapse in">	
+										<p>note</p>
+									</div>
+								</div
 							</div>
 						</div>
                     </div>

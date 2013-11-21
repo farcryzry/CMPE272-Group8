@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^correlation/$', TemplateView.as_view(template_name='core/correlation.html'), name='correlation'),
     url(r'^planet/$', TemplateView.as_view(template_name='core/planet.html'), name='planet'),
     url(r'^trends/$', TemplateView.as_view(template_name='core/trends.html'), name='trends'),
+	url(r'^hottechs/$', TemplateView.as_view(template_name='core/hottechs.html'), name='hottechs'),
 
     url(r'^api/', include(result_resource.urls)),
 )
