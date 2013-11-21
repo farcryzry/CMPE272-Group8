@@ -74,11 +74,26 @@
 								<div class="span12" style="padding-bottom:30px;" id="chart2">
 									<svg></svg>
 								</div>
+                                <div class="span12" style="padding-bottom:30px;" id="chart3">
+									<svg></svg>
+								</div>
+                                <div class="span12" style="padding-bottom:30px;" id="chart4">
+									<svg></svg>
+								</div>
 							</div>
 						</div>
 						<div class="tab-pane" id="note">	
 							<div class="block-content tab-content collapse in">
-								<p>lab note</p>
+								<h1>Code Commits Trends</h1>
+                                <p>You may guess that a JavaScript coder is likely to write code in CSS and PHP, and a C programmer is likely to work on C++ projects.</p>
+                                <p>Or you may imagine that a computer geek who favors Linux Shell and write code in Vim editor would most likely to be an expert on multiple programming languages.</p>
+                                <p>Now you can validate your&nbsp;speculation with GitHub user behavior data and this visualization tool!&nbsp;</p>
+                                <h2>Data colletion and processing</h2>
+                                <p>GitHub user and repository data used in this app is retrieved by Google BigQuery and downloaded as CSV file. The raw data contains a lot of unwanted rows and organized in a schema that is hard to perform analysis. This data is processed in R, where it is trimed and the table is reshaped for easy analysis. R also has very handy statistic utilities, from which we chose spearman&#39;s Rank Correlation to see the links between languages. As output a correlation matrix is generated, with which d3.js, a JavaScript visualization library, is able to draw a nice chord chart.</p>
+                                <h2>Findings</h2>
+                                <p>As you can imagine the languages in web development stack have strong relationships with each other. Most Scala coder also contribute to Java projects. Contributors of Go language and Shell script are also very active in project using other languages. &nbsp;Objective-C, C# and Java users seem to limit themselve in programing language spectrums, but this may result from biased sampling, which is discussed below.&nbsp;</p>
+                                <h2>Limitations&nbsp;</h2>
+                                <p>Although some relationship can be implied by this chord chart and some of them make perfect sense, it can not be used to draw a final conclusion. The sample we got is not random enough to represent all coders behavior - most project hosted on GitHub are open source, thus the programming languages used by this community is biased, with JavaScript being prevalent while Java or C# projects are less involved.</p>
 							</div>
 						</div>
 					</div>
@@ -102,7 +117,7 @@
 <script src="../../static/vendors/nvd3/src/models/scatter.js"></script>
 <script src="../../static/vendors/nvd3/src/models/line.js"></script>
 <script>
-    d3.json('../../static/data/trends.json', function(data) {
+    d3.json('../../static/data/daily_trends_2013.json', function(data) {
         nv.addGraph(function() {
           var chart = nv.models.stackedAreaChart()
                         .x(function(d) { return d[0] })
@@ -125,22 +140,65 @@
         });
     });
 
-    d3.json('../../static/data/trends_cumulative.json', function(data) {
+    d3.json('../../static/data/weekly_trends_2013.json', function(data) {
         nv.addGraph(function() {
-          var chart = nv.models.cumulativeLineChart()
+          var chart = nv.models.stackedAreaChart()
                         .x(function(d) { return d[0] })
-                        .y(function(d) { return d[1] }) //adjusting, 100% is 1.00, not 100 as it is in the data
-                        .color(d3.scale.category10().range());
+                        .y(function(d) { return d[1] });
 
           chart.xAxis
-              .tickFormat(function(d) {
-                return d3.time.format('%x')(new Date(d))
-              });
+              .tickFormat(d3.format(',.0f'));
 
           chart.yAxis
-              .tickFormat(d3.format(',.1%'));
+              .tickFormat(d3.format(',.2f'));
 
           d3.select('#chart2 svg')
+              .datum(data)
+            .transition().duration(500)
+              .call(chart);
+
+          nv.utils.windowResize(chart.update);
+
+          return chart;
+        });
+    });
+
+    d3.json('../../static/data/daily_trends_2012.json', function(data) {
+        nv.addGraph(function() {
+          var chart = nv.models.stackedAreaChart()
+                        .x(function(d) { return d[0] })
+                        .y(function(d) { return d[1] });
+
+          chart.xAxis
+              .showMaxMin(false)
+              .tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
+
+          chart.yAxis
+              .tickFormat(d3.format(',.2f'));
+
+          d3.select('#chart3 svg')
+            .datum(data)
+              .transition().duration(500).call(chart);
+
+          nv.utils.windowResize(chart.update);
+
+          return chart;
+        });
+    });
+
+    d3.json('../../static/data/weekly_trends_2012.json', function(data) {
+        nv.addGraph(function() {
+          var chart = nv.models.stackedAreaChart()
+                        .x(function(d) { return d[0] })
+                        .y(function(d) { return d[1] });
+
+          chart.xAxis
+              .tickFormat(d3.format(',.0f'));
+
+          chart.yAxis
+              .tickFormat(d3.format(',.2f'));
+
+          d3.select('#chart4 svg')
               .datum(data)
             .transition().duration(500)
               .call(chart);

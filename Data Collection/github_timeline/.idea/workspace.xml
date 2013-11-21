@@ -15,7 +15,7 @@
     <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$sample.coverage" NAME="collector Coverage Results" MODIFIED="1384647621145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$collector.coverage" NAME="collector Coverage Results" MODIFIED="1384807251909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$commit_locations.coverage" NAME="commit_locations Coverage Results" MODIFIED="1384810149038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/gh-commit-locations" />
-    <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$trends.coverage" NAME="trends Coverage Results" MODIFIED="1385019632096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/trends" />
+    <SUITE FILE_PATH="coverage/bigquery-cmd-line-sample$trends.coverage" NAME="trends Coverage Results" MODIFIED="1385069814910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/trends" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,10 +32,8 @@
       <file leaf-file-name="commit_locations.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="22" selection-start="3827" selection-end="4758" vertical-scroll-proportion="0.0" vertical-offset="2154" max-vertical-offset="4320">
-              <folding>
-                <element signature="e#367#387#0" expanded="true" />
-              </folding>
+            <state line="114" column="53" selection-start="4169" selection-end="4169" vertical-scroll-proportion="0.0" vertical-offset="2280" max-vertical-offset="4320">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,30 +41,64 @@
       <file leaf-file-name="trends.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/trends/trends.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="24" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="1900">
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trends_cumulative.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/trends/trends_cumulative.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+            <state line="48" column="44" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2440">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trends.csv" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="daily_trends_2013.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libs/trends/daily_trends_2013.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="275">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="daily_trends_2012.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/trends/daily_trends_2012.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weekly_trends_2012.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/trends/weekly_trends_2012.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weekly_trends_2013.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/trends/weekly_trends_2013.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="1856" selection-start="1852" selection-end="1856" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weekly_trends.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/trends/weekly_trends.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trends.csv" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/trends/trends.csv">
           <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="17" selection-start="106" selection-end="106" vertical-scroll-proportion="0.27118644" vertical-offset="0" max-vertical-offset="998800">
+            <state line="3146" column="20" selection-start="62856" selection-end="62856" vertical-scroll-proportion="0.0" vertical-offset="62744" max-vertical-offset="998800">
               <folding />
             </state>
           </provider>
@@ -75,19 +107,7 @@
       <file leaf-file-name="trends.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/trends/trends.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="49348" selection-start="49348" selection-end="49348" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="top_languages.csv" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/trends/top_languages.csv">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="5" selection-start="121" selection-end="126" vertical-scroll-proportion="-6.4" vertical-offset="0" max-vertical-offset="540">
+            <state line="0" column="49348" selection-start="49348" selection-end="49348" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
               <folding />
             </state>
           </provider>
@@ -96,10 +116,8 @@
       <file leaf-file-name="collector.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/collector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="20" selection-start="2164" selection-end="2174" vertical-scroll-proportion="-10.0" vertical-offset="1310" max-vertical-offset="4900">
-              <folding>
-                <element signature="e#814#829#0" expanded="true" />
-              </folding>
+            <state line="78" column="20" selection-start="2164" selection-end="2174" vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="4900">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,9 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/github-timeline.dat" />
-        <option value="$PROJECT_DIR$/sample.py" />
-        <option value="$PROJECT_DIR$/sql/joy.sql" />
         <option value="$PROJECT_DIR$/Fork2PullRequestByLanguage.csv" />
         <option value="$PROJECT_DIR$/sql/Fork2PullRequestByLanguage.sql" />
         <option value="$PROJECT_DIR$/client_secrets.json" />
@@ -129,6 +144,9 @@
         <option value="$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py" />
         <option value="$PROJECT_DIR$/collector.py" />
         <option value="$PROJECT_DIR$/libs/trends/trends.json" />
+        <option value="$PROJECT_DIR$/sql/correlation.sql" />
+        <option value="$PROJECT_DIR$/libs/trends/weekly_trends_2013.json" />
+        <option value="$PROJECT_DIR$/libs/trends/weekly_trends_2012.json" />
         <option value="$PROJECT_DIR$/libs/trends/trends.py" />
       </list>
     </option>
@@ -184,7 +202,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,6 +217,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="github_timeline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bigquery-cmd-line-sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github_timeline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -255,6 +286,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -547,11 +579,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27878788" sideWeight="0.57859534" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4214047" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20227273" sideWeight="0.60367894" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45652175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.68585527" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39632106" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39632106" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -561,6 +593,26 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5318792" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4214047" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.68585527" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28333333" sideWeight="0.60367894" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39632106" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -585,62 +637,10 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="75" />
+      <option name="time" value="95" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="31" selection-start="3901" selection-end="3901" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3672">
-          <folding>
-            <element signature="e#367#387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/2 loccnt_by_lang.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="31" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/queries.bq">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="502" selection-end="1163" vertical-scroll-proportion="-1.6" vertical-offset="300" max-vertical-offset="980" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/1 langcnt_by_loc.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="21" selection-start="281" selection-end="281" vertical-scroll-proportion="0.23364486" vertical-offset="0" max-vertical-offset="428" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/2 loccnt_by_lang.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="31" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/loccnt_by_lang_sample.csv">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="818" column="36" selection-start="27455" selection-end="27455" vertical-scroll-proportion="0.35672516" vertical-offset="16238" max-vertical-offset="16580" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/loccnt_by_lang.csv">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49972" column="21" selection-start="1598159" selection-end="1598159" vertical-scroll-proportion="-8.08" vertical-offset="999238" max-vertical-offset="999580" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/github_commits_by_C#.csv">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -654,27 +654,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="998800">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="20" selection-start="2164" selection-end="2174" vertical-scroll-proportion="-10.0" vertical-offset="1310" max-vertical-offset="4900">
-          <folding>
-            <element signature="e#814#829#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="22" selection-start="3827" selection-end="4758" vertical-scroll-proportion="0.0" vertical-offset="2154" max-vertical-offset="4320">
-          <folding>
-            <element signature="e#367#387#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="998800" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/trends/top_languages.csv">
@@ -682,7 +662,28 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="121" selection-end="126" vertical-scroll-proportion="-6.4" vertical-offset="0" max-vertical-offset="540">
+        <state line="8" column="5" selection-start="121" selection-end="126" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/trends_cumulative.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/correlation.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="19" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.0" vertical-offset="59" max-vertical-offset="520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/python_dateutil-2.1-py2.7.egg/dateutil/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="725" column="0" selection-start="27025" selection-end="27025" vertical-scroll-proportion="0.0" vertical-offset="14272" max-vertical-offset="18300">
           <folding />
         </state>
       </provider>
@@ -694,18 +695,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/trends/trends.py">
+    <entry file="file://$PROJECT_DIR$/collector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="24" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="1900">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state line="78" column="20" selection-start="2164" selection-end="2174" vertical-scroll-proportion="0.0" vertical-offset="1310" max-vertical-offset="4900">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/trends/trends_cumulative.json">
+    <entry file="file://$PROJECT_DIR$/libs/gh-commit-locations/commit_locations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="281">
+        <state line="114" column="53" selection-start="4169" selection-end="4169" vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="4280">
           <folding />
         </state>
       </provider>
@@ -715,7 +714,49 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="106" selection-end="106" vertical-scroll-proportion="0.27118644" vertical-offset="0" max-vertical-offset="998800">
+        <state line="3146" column="20" selection-start="62856" selection-end="62856" vertical-scroll-proportion="0.0" vertical-offset="62744" max-vertical-offset="998800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/weekly_trends.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="48" selection-start="48" selection-end="48" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/weekly_trends_2013.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="1856" selection-start="1852" selection-end="1856" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/weekly_trends_2012.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/daily_trends_2012.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="301">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/trends.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="44" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/trends/daily_trends_2013.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="301">
           <folding />
         </state>
       </provider>
