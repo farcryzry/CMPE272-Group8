@@ -122,22 +122,19 @@
                 {% include 'sidebar.html' %}
                 <!--/span-->
                 <div class="span9" id="content">
-                      <!-- morris stacked chart -->
                     <div class="row-fluid" >
 						<div class="block">
-                            <div class="navbar navbar-inner block-header">
-								<div class="muted pull-left">
-									<h4>Intro</h4>
-								</div>
-							</div>
-
-							<div class="block-content collapse in" style="text-align: center ;">
-							</div>
 							<div class="navbar navbar-inner block-header">
-								<div class="muted pull-left">
-									<h4>Visualization</h4>
-								</div>
-								<div class="btn-group pull-right" style="margin:0 0 10px 0">
+								<ul class="nav nav-pills">
+								  <li class="active"><a href="#">Home</a></li>
+								  <li><a href="#">Profile</a></li>
+								  <li><a href="#">Messages</a></li>
+								</ul>
+
+							</div>
+							
+							<div class="block-content collapse in">
+															<div class="btn-group pull-right" style="margin:0 0 10px 0">
 									  <button class="btn btn-primary" id="lan_name">Language: Java</button>
 									  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
 									  <ul class="dropdown-menu">
@@ -161,9 +158,6 @@
 										<li onclick="cloudByType('negative')"><a href="#">negative</a></li>
 									  </ul>
 								</div><!-- /btn-group -->
-							</div>
-							
-							<div class="block-content collapse in">
 								<div class="span12" style="padding-bottom:30px;" id="chart_div">
 								
 								</div>
