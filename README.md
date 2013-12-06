@@ -8,7 +8,7 @@ Octocat's Data Lab - Github Data Analysis
 
 <span>
 <a href="http://octodex.github.com/labtocat" class="preview-image">
-<img src="../../static/images/labtocat-big.png" style="width: 70%" alt="the Labtocat">
+<img src="http://octodex.github.com/images/labtocat.png" style="width: 70%" alt="the Labtocat">
 </a>
 </span>
 
