@@ -59,7 +59,7 @@
 				cache: false
 			}).done(function(csvAsString){
 				csvAsArray = $.csv.toArrays(csvAsString);
-				csvAsArray.map(function(d){ return [d[0],parseInt(d[1]),d[2],d[3]] });
+				csvAsArray = csvAsArray.map(function(d){ return [d[0],parseInt(d[1]),d[2],d[3]] });
 				drawWordCloud();
 			});
 		}

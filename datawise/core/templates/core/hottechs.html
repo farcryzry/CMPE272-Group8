@@ -58,7 +58,7 @@
 				cache: false
 			}).done(function(csvAsString){
 				csvAsArray = $.csv.toArrays(csvAsString);
-				csvAsArray.map(function(d){ return [d[0],parseInt(d[1]),d[2]] });
+				csvAsArray = csvAsArray.map(function(d){ return [d[0],parseInt(d[1]),d[2]] });
 				drawWordCloud();
 			});
 		}
@@ -70,19 +70,18 @@
 		};
 		
 		function drawWordCloud(){
-			console.log("start to process data");
 			var data= csvAsArray.filter(function(d){return d[2]==type;})
 			console.log("filtered data:");
 			console.log(data);
 			var maxCount=d3.max(data, function(d) { return d[1]; });
 			console.log("max count: "+maxCount);
-			wordScale=d3.scale.linear().domain([1,maxCount/10,maxCount]).range([15,60,120]).clamp(true);
+			wordScale=d3.scale.linear().domain([1,maxCount/10,maxCount]).range([15,60,100]).clamp(true);
 			console.log("max font size: "+wordScale(maxCount));
 			var wordArray=data.map(function(d) {return {text: d[0], count: d[1], size: wordScale(d[1])};});	
 			var fill = d3.scale.category20();
-			console.log("start to initiate cload");
+			console.log("start to initiate cloud");
 			$("#chart_div").empty();
-			d3.layout.cloud().size([800, 400])
+			d3.layout.cloud().size([960, 400])
 			  .words(wordArray)
 			  .padding(0)
 			  .rotate(function() { return ~~(Math.random() * 2) * 90; })
