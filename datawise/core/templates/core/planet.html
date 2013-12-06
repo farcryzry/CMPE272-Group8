@@ -17,7 +17,8 @@
         <script src="../../static/vendors/jquery.knob.js"></script>
         <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
         <script src="../../static/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>
+		<!--<script src="../../static/vendors/csvToArray.v2.1.min.js"></script>-->
+        <script src="../../static/vendors/jquery.csv-0.71.min.js"></script>
 		<script type='text/javascript' src='https://www.google.com/jsapi'></script>
 		
 		<script type='text/javascript'>
@@ -42,7 +43,7 @@
 						dataType: 'text',
 						cache: false
 				 }).done(function(csvAsString){
-						var csvAsArray=csvAsString.csvToArray();
+						var csvAsArray=$.csv.toArrays(csvAsString);
 						//alert(csvAsArray);
 						data = google.visualization.arrayToDataTable(csvAsArray);
 						draw();
