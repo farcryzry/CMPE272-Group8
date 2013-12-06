@@ -1,7 +1,8 @@
-CMPE272-Group8
+Octocat's Data Lab (Github Data Analysis)
 ==============
 
-Octocat's Data Lab - Github Data Analysis
+CMPE272 project from Group8
+Team member: Nan Yu, Yulin Ye, Akash Patel and Ruiyun Zhou
 
 <a href='http://ec2-54-201-59-199.us-west-2.compute.amazonaws.com' target='_blank_'>Live Demo Here</a>
 
