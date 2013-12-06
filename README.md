@@ -1,6 +1,6 @@
 CMPE272-Group8
 ==============
 
-Github Data Analysis
+Octocat's Data Lab - Github Data Analysis
 
-http://ec2-54-201-59-199.us-west-2.compute.amazonaws.com
+<a href='http://ec2-54-201-59-199.us-west-2.compute.amazonaws.com'>Live Demo Here</a>
