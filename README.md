@@ -2,14 +2,22 @@ Octocat's Data Lab (Github Data Analysis)
 ==============
 
 CMPE272 project from Group8 <br>
-Team member: Nan Yu, Yulin Ye, Akash Patel and Ruiyun Zhou<br>
+Team member: 
+<table><tbody>
+   <tr>
+      <td>Nan Yu</td>
+      <td>Yulin Ye</td>
+      <td>Akash Patel</td>
+      <td>Ruiyun Zhou</td>
+   </tr>
+</tbody></table>
 
 <h3><a href='http://ec2-54-201-59-199.us-west-2.compute.amazonaws.com' target='_blank_'>Live Demo Here</a></h3>
 
 
 <span>
 <a href="http://octodex.github.com/labtocat" class="preview-image">
-<img src="http://octodex.github.com/images/labtocat.png" width="200px" alt="the Labtocat">
+<img src="http://octodex.github.com/images/labtocat.png" align="center" width="200px" alt="the Labtocat">
 </a>
 </span>
 
