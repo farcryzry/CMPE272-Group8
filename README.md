@@ -12,7 +12,7 @@ Team member:
    </tr>
 </tbody></table>
 
-<h3><a href='http://ec2-54-68-232-206.us-west-2.compute.amazonaws.com' target='_blank_'>Live Demo Here</a></h3>
+<h3><a href='http://54.69.149.80/' target='_blank_'>Live Demo Here</a></h3>
 
 
 <span>
